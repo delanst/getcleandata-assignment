@@ -18,7 +18,7 @@ prepareAnalysis <- function() {
 runAnalysis <- function(dataPath) {
     # get the data on the computer
     prepareAnalysis()
-    
+
       # read and merge the train and test data sets
       print("Reading and merging data...")
       activityTest <- read.table(file.path(dataPath, "test" , "Y_test.txt" ),header = FALSE)
@@ -33,6 +33,7 @@ runAnalysis <- function(dataPath) {
   
       names(subjectSet)<-c("subject")
       names(activitySet)<- c("activity")
+      # read the features
       featuresNames <- read.table(file.path(dataPath, "features.txt"),head=FALSE)
       names(featuresSet)<- featuresNames$V2
       
@@ -51,12 +52,17 @@ runAnalysis <- function(dataPath) {
       
       # Appropriately labels the data set with descriptive variable names.
       print("Describing variable names...")
-      names(data)<-gsub("^t", "time", names(data))
-      names(data)<-gsub("^f", "frequency", names(data))
-      names(data)<-gsub("Acc", "Accelerometer", names(data))
-      names(data)<-gsub("Gyro", "Gyroscope", names(data))
-      names(data)<-gsub("Mag", "Magnitude", names(data))
-      names(data)<-gsub("BodyBody", "Body", names(data))
+      tidynames <- names(data)
+      tidynames <- gsub('^t', 'Time ', tidynames)
+      tidynames <- gsub('^f', 'Frequency', tidynames)
+      tidynames <- gsub('-mean', 'Mean', tidynames)
+      tidynames <- gsub('-std', 'Std', tidynames)
+      tidynames <- gsub('[()-]', '', tidynames)
+      tidynames <- gsub('BodyBody', 'Body', tidynames)
+      tidynames <- gsub("Acc", "Accelerometer", tidynames)
+      tidynames <- gsub("Gyro", "Gyroscope", tidynames)
+      tidynames <- gsub("Mag", "Magnitude", tidynames)
+      colnames(data) <- tidynames
       
       # From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
       print("Creating tidy data set...")
@@ -69,6 +75,3 @@ runAnalysis <- function(dataPath) {
 
 # run the analysis and will generate the tidy data set file.
 runAnalysis("./data/UCI HAR Dataset")
-
-
-
