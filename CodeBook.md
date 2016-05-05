@@ -40,6 +40,7 @@ The replacement text spring has been taken from the features_info.txt.
 | gsub("Mag", "Magnitude", tidynames) | Replace Mag with Maginute | 
 
 Here are some examples of the new column names that are generated in the tidy data set.
+
 | Original column name | New column name | 
 | -------------------- | --------------- | 
 | tBodyAcc-mean()-X | Time BodyAccelerometerMeanX | 
@@ -49,3 +50,4 @@ Here are some examples of the new column names that are generated in the tidy da
 | tBodyAcc-std()-Y | Time BodyAccelerometerStdY | 
 | tBodyAcc-std()-Z | Time BodyAccelerometerStdZ | 
 | tGravityAcc-mean()-X | Time GravityAcccelerometerMeanX | 
+
