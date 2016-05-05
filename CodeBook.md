@@ -27,16 +27,16 @@ The tidydata.txt proceduces the measurments only on the mean and standard deviat
 The following replacements have happened on the column names in order to give a clearing meaning.
 The replacement text spring has been taken from the features_info.txt.
 
-Function | Description 
-gsub('^t', 'Time ', tidy.dt.names) | Replace all columns beginning with t to Time
-gsub('^f', 'Frequency', tidy.dt.names) | Replace all columns beginning with f to Frequency
-gsub('-mean', 'Mean', tidy.dt.names) |  Replace all columns containing -mean with Mean
-gsub('-std', 'Std', tidy.dt.names) |  Replace all columns containing -std with Mean
-gsub('[()-]', '', tidy.dt.names) | Removed the ()-
-gsub('BodyBody', 'Body', tidy.dt.names) | Replace BodyBody with Body
-gsub("Acc", "Accelerometer", tidynames) | Replace Acc with Accelerometer
-gsub("Gyro", "Gyroscope", tidynames) | Replace Gyro with Gyroscope
-gsub("Mag", "Magnitude", tidynames) | Replace Mag with Maginute
+Function | Description |
+gsub('^t', 'Time ', tidy.dt.names) | Replace all columns beginning with t to Time |
+gsub('^f', 'Frequency', tidy.dt.names) | Replace all columns beginning with f to Frequency |
+gsub('-mean', 'Mean', tidy.dt.names) |  Replace all columns containing -mean with Mean |
+gsub('-std', 'Std', tidy.dt.names) |  Replace all columns containing -std with Mean |
+gsub('[()-]', '', tidy.dt.names) | Removed the ()- |
+gsub('BodyBody', 'Body', tidy.dt.names) | Replace BodyBody with Body |
+gsub("Acc", "Accelerometer", tidynames) | Replace Acc with Accelerometer |
+gsub("Gyro", "Gyroscope", tidynames) | Replace Gyro with Gyroscope |
+gsub("Mag", "Magnitude", tidynames) | Replace Mag with Maginute |
 
 Here are some examples of the new column names that are generated in the tidy data set.
 Original column name | New column name 
