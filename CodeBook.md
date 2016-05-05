@@ -27,7 +27,7 @@ The tidydata.txt proceduces the measurments only on the mean and standard deviat
 The following replacements have happened on the column names in order to give a clearing meaning.
 The replacement text spring has been taken from the features_info.txt.
 
-Function | Description
+Function | Description 
 gsub('^t', 'Time ', tidy.dt.names) | Replace all columns beginning with t to Time
 gsub('^f', 'Frequency', tidy.dt.names) | Replace all columns beginning with f to Frequency
 gsub('-mean', 'Mean', tidy.dt.names) |  Replace all columns containing -mean with Mean
